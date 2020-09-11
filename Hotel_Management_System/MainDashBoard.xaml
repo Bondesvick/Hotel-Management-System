@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="Hotel_Management_System.MainDashBoard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Hotel_Management_System"
+             mc:Ignorable="d"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <materialDesign:TransitioningContent x:Name="TrasitioningContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
+                <StackPanel>
+                    <TextBlock Text="Lucky Me" FontFamily="Cooper Black" Foreground="#FFC00000"/>
+                    <StackPanel Margin="10">
+                        <TextBlock Text="R$ 28" FontSize="50" FontFamily="Cooper Black" Foreground="#FFC00000"/>
+                    </StackPanel>
+                    <Button/>
+                </StackPanel>
+                <Image Margin="10" Width="200" Height="200" Source="Assets/statistic-1820320_1280.png"/>
+            </StackPanel>
+        </materialDesign:TransitioningContent>
+    </Grid>
+</UserControl>

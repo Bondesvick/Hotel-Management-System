@@ -1,0 +1,278 @@
+﻿<UserControl x:Class="Hotel_Management_System.Costumer_Register"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Hotel_Management_System"
+             mc:Ignorable="d" 
+             
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="13"
+      TextOptions.TextFormattingMode="Ideal"
+      TextOptions.TextRenderingMode="Auto"
+      Background="{DynamicResource MaterialDesignPaper}"
+      FontFamily="{DynamicResource MaterialDesignFont}"
+             d:DesignHeight="640" d:DesignWidth="1182" 
+             
+             Loaded="UserControl_Loaded"
+             PreviewKeyDown="CostumerRegisterDataGrid1_PreviewKeyDown">
+    <Control.Resources>
+        <CollectionViewSource x:Key="costumerRegisterViewSource" d:DesignSource="{d:DesignInstance {x:Type local:CostumerRegister}, CreateList=True}"/>
+        
+        <!--Notification Animation-->
+        <Storyboard x:Key="NotifyOpen">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="NotifySnack">
+                <EasingDoubleKeyFrame KeyTime="0" Value="50"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+
+        </Storyboard>
+    </Control.Resources>
+
+    <!--Notification Animation Triggers-->
+    <Control.Triggers>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="BtSave">
+            <BeginStoryboard Storyboard="{StaticResource NotifyOpen}"/>
+        </EventTrigger>
+    </Control.Triggers>
+    <Grid>
+        <materialDesign:TransitioningContent x:Name="TrasitioningContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
+
+            <Grid>
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                
+                
+
+                <!--Main Register Page-->
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    
+                <!--Register form Panel-->            
+                    <materialDesign:Card x:Name="RegPanel" Grid.Column="0" Margin="4 0 4 4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="300">
+                    
+                    <Grid DataContext="{StaticResource costumerRegisterViewSource}">
+                        
+
+                        <Grid x:Name="grid2" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0 5 4 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="120"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+
+                            </Grid.RowDefinitions>
+                                <TextBlock Style="{StaticResource MaterialDesignHeadlineTextBlock}" Grid.Row="0" Grid.ColumnSpan="2">Costumer Register</TextBlock>
+                                <!--<TextBlock Text="COSTUMER REGISTER" Foreground="Gray" Grid.Row="0" HorizontalAlignment="Center" Grid.ColumnSpan="2" FontSize="18"/>-->
+                            <Label Content="First Name:" Grid.Column="0" Margin="3" Grid.Row="1" VerticalAlignment="Bottom" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Stretch"/>
+                            <TextBox x:Name="firstNameTextBox" Grid.Column="1" Height="24" Grid.Row="1" materialDesign:HintAssist.Hint="FirstName" Text="{Binding FirstName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" VerticalContentAlignment="Stretch" HorizontalAlignment="Stretch" Margin=" 0 0 3 0"/>
+
+                            <Label Content="Last Name:" Grid.Column="0" Margin="3" Grid.Row="2" VerticalAlignment="Bottom"/>
+                                <TextBox x:Name="lastNameTextBox" materialDesign:HintAssist.Hint="LastName" Grid.Column="1" Grid.Row="2" Text="{Binding LastName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Margin=" 0 0 3 0"/>
+
+                            <Label Content="Gender:" Grid.Column="0" Margin="3" Grid.Row="3" VerticalAlignment="Bottom" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Stretch"/>
+                                <ComboBox Grid.Row="3" Grid.Column="1" materialDesign:HintAssist.Hint="Gender" x:Name="genderComboBox" Text="{Binding Gender}" Margin=" 0 0 3 0">
+                                <ComboBoxItem Content="Male"/>
+                                <ComboBoxItem Content="Female"/>
+                            </ComboBox>
+
+                            <!--<TextBox x:Name="genderTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="2" Text="{Binding Gender, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="200"/>-->
+
+                            <Label Content="Phone Number:" Grid.Column="0" Margin="3" Grid.Row="4" VerticalAlignment="Bottom"/>
+                                <TextBox x:Name="phoneNumberTextBox1" materialDesign:HintAssist.Hint="Phone Number" Grid.Column="1" Grid.Row="4" Text="{Binding TellNo, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Margin=" 0 0 3 0"/>
+
+                            <Label Content="Occupation:" Grid.Column="0" Margin="3" Grid.Row="5" VerticalAlignment="Bottom"/>
+                                <TextBox x:Name="occupationTextBox1" materialDesign:HintAssist.Hint="Occupation" Grid.Column="1" Grid.Row="5" Text="{Binding Occupation, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Margin=" 0 0 3 0"/>
+
+                            <Label Content="Home Address:" Grid.Column="0" Margin="3" Grid.Row="6" VerticalAlignment="Bottom"/>
+                                <TextBox x:Name="address1TextBox" materialDesign:HintAssist.Hint="Home Address" Grid.Column="1" Grid.Row="6" Text="{Binding Address1, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin=" 0 0 3 0" TextWrapping="WrapWithOverflow"/>
+
+                            <Label Content="Next Of Kin:" Grid.Column="0" Margin="3" Grid.Row="7" VerticalAlignment="Center"/>
+                                <StackPanel Orientation="Vertical" Grid.Row="7" Grid.Column="1">
+                                    <TextBox x:Name="nextOfKinName" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Grid.Column="1" Grid.Row="4" Text="{Binding NxtOfKinName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" materialDesign:HintAssist.Hint="Next of Kin Name" Margin=" 0 0 3 0"/>
+                                <Separator/>
+                                    <TextBox x:Name="nextOfKinPhone" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Grid.Column="1" Grid.Row="4" Text="{Binding NxtOfKinNumber, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" materialDesign:HintAssist.Hint="Next of Kin Number" Margin=" 0 0 3 0"/>
+                                <Separator/>
+                                    <ComboBox x:Name="nextOfKinRelation" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Grid.Column="1" Grid.Row="4" Text="{Binding NxtOfKinRelationship, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" materialDesign:HintAssist.Hint="RelationShip with Next of Kin" Margin=" 0 0 3 0">
+                                    <ComboBoxItem Content="Brother"/>
+                                    <ComboBoxItem Content="Sister"/>
+                                    <ComboBoxItem Content="Wife"/>
+                                    <ComboBoxItem Content="Husband"/>
+                                    <ComboBoxItem Content="Friend"/>
+                                    <ComboBoxItem Content="Family Member"/>
+                                    <ComboBoxItem Content="Coleague"/>
+                                </ComboBox>
+                            </StackPanel>
+
+
+                            <StackPanel Grid.Column="0" Grid.Row="8" Orientation="Vertical">
+                                <Label Content="Picture:" Margin="3" VerticalAlignment="Center"/>
+                                <Button x:Name="BrowsePicture" Margin="12 10" Content="Browse" Click="BrowsePicture_Click"/>
+                            </StackPanel>
+                                <Image x:Name="pictureImage" Grid.Column="1" Height="23" Margin="10,48,96,48" Grid.Row="8" Source="{Binding Picture}"/>
+
+
+                                <Label Content="Address 2:" Grid.Column="0" Margin="3" Grid.Row="9" VerticalAlignment="Bottom"/>
+                            <TextBox x:Name="address2TextBox" Grid.Column="1" Grid.Row="9" Text="{Binding Address2, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+
+
+                        </Grid>
+
+
+
+                    </Grid>
+                </materialDesign:Card>
+                <!--Register DataGrid Table-->
+                <materialDesign:Card Margin="4 0 4 4" Grid.Column="1" VerticalAlignment="Stretch">
+                        <Grid DataContext="{StaticResource costumerRegisterViewSource}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        
+                        <!--Search text box Grid-->
+                        <Grid  Grid.Row="0" Margin=" 3 3 3 0" PreviewKeyDown="CostumerRegisterDataGrid1_PreviewKeyDown">
+                            <TextBox x:Name="SearchBox" materialDesign:HintAssist.Hint="SEARCH TABLE" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="18" KeyUp="SearchBox_KeyUp"/>
+                            
+                        </Grid>
+                        
+                        <!--DateGrid Table itself-->
+                        <DataGrid materialDesign:DataGridAssist.CellPadding="5" materialDesign:DataGridAssist.ColumnHeaderPadding="4"  x:Name="costumerRegisterDataGrid1" AutoGenerateColumns="False" x:FieldModifier="public" EnableRowVirtualization="True" ItemsSource="{Binding}" Grid.Row="1" IsSynchronizedWithCurrentItem="True" Margin="1" SelectedCellsChanged="CostumerRegisterDataGrid1_SelectedCellsChanged" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" PreviewKeyDown="CostumerRegisterDataGrid1_PreviewKeyDown2">
+                            
+                            <DataGrid.Columns>
+                                    <DataGridTextColumn x:Name="clientIDColumn1" Binding="{Binding ClientID}" Header="Client ID" Width="SizeToHeader"/>
+                                <DataGridTextColumn x:Name="firstNameColumn1" Binding="{Binding FirstName}" Header="First Name" Width="SizeToHeader"/>
+                                <DataGridTextColumn x:Name="lastNameColumn1" Binding="{Binding LastName}" Header="Last Name" Width="SizeToHeader"/>
+                                <DataGridTextColumn x:Name="genderColumn1" Binding="{Binding Gender}" Header="Gender" Width="SizeToHeader"/>
+
+                                <DataGridTextColumn x:Name="tellNoColumn1" Binding="{Binding TellNo}" Header="Phone Number" Width="SizeToHeader"/>
+
+                                <DataGridTextColumn x:Name="occupationColumn1" Binding="{Binding Occupation}" Header="Occupation" Width="SizeToHeader"/>
+
+                                <DataGridTextColumn x:Name="address1Column1" Binding="{Binding Address1}" Header="Home Address" Width="SizeToHeader"/>
+
+                                <DataGridTextColumn x:Name="nxtOfKinNameColumn1" Binding="{Binding NxtOfKinName}" Header="Next of Kin" Width="SizeToHeader"/>
+
+                                <DataGridTextColumn x:Name="nxtOfKinNumberColumn1" Binding="{Binding NxtOfKinNumber}" Header="NxtOfKinNumber" Width="SizeToHeader"/>
+
+                                <DataGridTextColumn x:Name="nxtOfKinRelationColumn1" Binding="{Binding NxtOfKinRelationship}" Header="NxtOfKinRelationship" Width="SizeToHeader"/>
+
+                                <DataGridTextColumn x:Name="dateRegisteredColumn1" Binding="{Binding DateRegistered}" Header="Date Registered" Width="SizeToHeader"/>
+
+                                <DataGridTextColumn x:Name="address2Column1" Binding="{Binding Address2}" Header="Address 2" Width="SizeToHeader"/>
+
+
+                                <DataGridTemplateColumn x:Name="pictureColumn1" Header="Picture" Width="SizeToHeader">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image Source="{Binding Picture}"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                            </DataGrid.Columns>
+                        </DataGrid>
+
+                        
+
+
+
+
+                    </Grid>
+
+                </materialDesign:Card>
+
+                </Grid>
+
+                <!--Top bar Buttons-->
+                <!--Top Bar-->
+                <Grid Grid.Row="0">
+                    <materialDesign:Card Height="40">
+                        <Grid>
+                            <StackPanel Orientation="Horizontal">
+                                <Button x:Name="BtNew"  Margin="3 0 10 0" Click="BtNew_Click" ToolTip="Register new Costumer">
+                                    <StackPanel Orientation="Horizontal">
+                                        <materialDesign:PackIcon Kind="NewBox"/>
+                                        <TextBlock Text="New" Margin="2 0 0 0"/>
+                                    </StackPanel>
+                                </Button>
+
+                                <Button x:Name="BtCancel" Margin="0 0 10 0" Click="BtCancel_Click" ToolTip="Disable Panel">
+                                    <StackPanel Orientation="Horizontal">
+                                        <materialDesign:PackIcon Kind="Cancel"/>
+                                        <TextBlock Text="Cancel" Margin="2 0 0 0"/>
+                                    </StackPanel>
+                                </Button>
+                                <Button x:Name="BtEdit" Margin="0 0 10 0" Click="BtEdit_Click" ToolTip="Edit selected Costumer details">
+                                    <StackPanel Orientation="Horizontal">
+                                        <materialDesign:PackIcon Kind="Edit"/>
+                                        <TextBlock Text="Edit" Margin="2 0 0 0"/>
+                                    </StackPanel>
+                                </Button>
+                                <Button x:Name="BtSave" Margin="0 0 10 0" Click="BtSave_Click" ToolTip="Save new costumer details">
+                                    <StackPanel Orientation="Horizontal">
+                                        <materialDesign:PackIcon Kind="ContentSave"/>
+                                        <TextBlock Text="Save" Margin="2 0 0 0"/>
+                                    </StackPanel>
+                                </Button>
+                                <Button x:Name="BtDelete" Margin="0 0 10 0" Click="BtDelete_Click" ToolTip="Delete selected costumer details">
+                                    <StackPanel Orientation="Horizontal">
+                                        <materialDesign:PackIcon Kind="Delete"/>
+                                        <TextBlock Text="Delete" Margin="2 0 0 0"/>
+                                    </StackPanel>
+                                </Button>
+                                <Button x:Name="BtUpdate" Margin="0 0 10 0" Click="BtUpdate_Click" ToolTip="Update current costumer details">
+                                    <StackPanel Orientation="Horizontal">
+                                        <materialDesign:PackIcon Kind="Update"/>
+                                        <TextBlock Text="Update" Margin="2 0 0 0"/>
+                                    </StackPanel>
+                                </Button>
+                                <Button Margin="0 0 10 0" x:Name="Previuos" Click="Previuos_Click" ToolTip="Scroll up" MouseLeftButtonDown="Previuos_MouseLeftButtonDown">
+                                    <materialDesign:PackIcon Kind="ArrowUp"/>
+                                </Button>
+                                <Button Margin="0 0 10 0" x:Name="Next" Click="Next_Click" ToolTip="Scroll downs" MouseLeftButtonDown="Next_MouseLeftButtonDown">
+                                    <materialDesign:PackIcon Kind="ArrowDown"/>
+                                </Button>
+                                <Button x:Name="RefreshButton" Click="RefreshButton_Click" ToolTip="Refresh Table">
+                                    <materialDesign:PackIcon Kind="Refresh"/>
+                                </Button>
+
+                            </StackPanel>
+                        </Grid>
+                    </materialDesign:Card>
+                </Grid>
+
+            </Grid>
+        </materialDesign:TransitioningContent>
+
+        
+         <!--Notification SnackBar-->          
+        <materialDesign:Snackbar x:Name="NotifySnack" IsActive="False">
+            <materialDesign:SnackbarMessage
+    Content="Data Saved Successfully!"
+    ActionContent="ACCENT" />
+        </materialDesign:Snackbar>
+
+    </Grid>
+</UserControl>

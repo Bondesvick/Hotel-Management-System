@@ -1,0 +1,424 @@
+﻿<UserControl x:Class="Hotel_Management_System.Navigated_Pages.Settings"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Hotel_Management_System.Navigated_Pages"
+             mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="13"
+      TextOptions.TextFormattingMode="Ideal"
+      TextOptions.TextRenderingMode="Auto"
+      Background="{DynamicResource MaterialDesignPaper}"
+      FontFamily="{DynamicResource MaterialDesignFont}"
+      d:DesignHeight="640" d:DesignWidth="1184">
+
+    <Grid>
+        <materialDesign:TransitioningContent x:Name="TrasitioningContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
+
+
+
+            
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+
+
+                    <!--Settings Page Content here-->
+                    <Grid x:Name="contents" Grid.Row="1">
+                        
+                    </Grid>
+
+                    <!--Top Menu-->
+                <materialDesign:Card Grid.Row="0">
+                    <Grid>
+                        <materialDesign:Card>
+                            <Menu MaxHeight="80">
+                                <MenuItem>
+                                    <MenuItem.Header>
+                                        <StackPanel Orientation="Horizontal">
+                                            <materialDesign:PackIcon Kind="Collections"/>
+                                            <TextBlock Text="Master Entery" Margin="5 0 0 0"/>
+                                        </StackPanel>
+                                    </MenuItem.Header>
+                                    <MenuItem x:Name="HotelDetails" Click="HotelDetails_Click">
+                                        <MenuItem.Header>
+                                            <StackPanel Orientation="Horizontal">
+                                                <materialDesign:PackIcon Kind="Collections"/>
+                                                <TextBlock Text="Hotel Details" Margin="5 0 0 0"/>
+                                            </StackPanel>
+                                        </MenuItem.Header>
+                                    </MenuItem>
+
+                                    <MenuItem x:Name="HotelRoomPlan" Click="HotelRoomPlan_Click">
+                                        <MenuItem.Header>
+                                            <StackPanel Orientation="Horizontal">
+                                                <materialDesign:PackIcon Kind="Collections"/>
+                                                <TextBlock Text="Hotel Room Plan" Margin="5 0 0 0"/>
+                                            </StackPanel>
+                                        </MenuItem.Header>
+                                    </MenuItem>
+
+                                    <MenuItem x:Name="CurrencyRegister" Click="CurrencyRegister_Click">
+                                        <MenuItem.Header>
+                                            <StackPanel Orientation="Horizontal">
+                                                <materialDesign:PackIcon Kind="Collections"/>
+                                                <TextBlock Text="Currency Register" Margin="5 0 0 0"/>
+                                            </StackPanel>
+                                        </MenuItem.Header>
+                                    </MenuItem>
+
+                                    <MenuItem x:Name="RoomCategory" Click="RoomCategory_Click">
+                                        <MenuItem.Header>
+                                            <StackPanel Orientation="Horizontal">
+                                                <materialDesign:PackIcon Kind="Collections"/>
+                                                <TextBlock Text="Room type Register" Margin="5 0 0 0"/>
+                                            </StackPanel>
+                                        </MenuItem.Header>
+                                    </MenuItem>
+
+                                    <MenuItem x:Name="RoomsEntery" Click="RoomsEntery_Click">
+                                        <MenuItem.Header>
+                                            <StackPanel Orientation="Horizontal">
+                                                <materialDesign:PackIcon Kind="Collections"/>
+                                                <TextBlock Text="Rooms" Margin="5 0 0 0"/>
+                                            </StackPanel>
+                                        </MenuItem.Header>
+                                    </MenuItem>
+
+                                    <MenuItem x:Name="CostumerID" Click="CostumerID_Click">
+                                        <MenuItem.Header>
+                                            <StackPanel Orientation="Horizontal">
+                                                <materialDesign:PackIcon Kind="Collections"/>
+                                                <TextBlock Text="Costumer ID types" Margin="5 0 0 0"/>
+                                            </StackPanel>
+                                        </MenuItem.Header>
+                                    </MenuItem>
+                                    <MenuItem x:Name="SupplierDetails" Click="SupplierDetails_Click">
+                                        <MenuItem.Header>
+                                            <StackPanel Orientation="Horizontal">
+                                                <materialDesign:PackIcon Kind="Collections"/>
+                                                <TextBlock Text="Suppplier Details" Margin="5 0 0 0"/>
+                                            </StackPanel>
+                                        </MenuItem.Header>
+                                    </MenuItem>
+
+                                    <MenuItem>
+                                        <MenuItem.Header>
+                                            <StackPanel Orientation="Horizontal">
+                                                <materialDesign:PackIcon Kind="Collections"/>
+                                                <TextBlock Text="Guest Register" Margin="5 0 0 0"/>
+                                            </StackPanel>
+                                        </MenuItem.Header>
+                                    </MenuItem>
+
+                                    <MenuItem>
+                                        <MenuItem.Header>
+                                            <StackPanel Orientation="Horizontal">
+                                                <materialDesign:PackIcon Kind="Collections"/>
+                                                <TextBlock Text="Hall" Margin="5 0 0 0"/>
+                                            </StackPanel>
+                                        </MenuItem.Header>
+                                    </MenuItem>
+
+                                    <MenuItem>
+                                        <MenuItem.Header>
+                                            <StackPanel Orientation="Horizontal">
+                                                <materialDesign:PackIcon Kind="Collections"/>
+                                                <TextBlock Text="Garden" Margin="5 0 0 0"/>
+                                            </StackPanel>
+                                        </MenuItem.Header>
+                                    </MenuItem>
+
+                                    <MenuItem>
+                                        <MenuItem.Header>
+                                            <StackPanel Orientation="Horizontal">
+                                                <materialDesign:PackIcon Kind="Collections"/>
+                                                <TextBlock Text="Delivery Person Register" Margin="5 0 0 0"/>
+                                            </StackPanel>
+                                        </MenuItem.Header>
+                                    </MenuItem>
+
+                                    <MenuItem>
+                                        <MenuItem.Header>
+                                            <StackPanel Orientation="Horizontal">
+                                                <materialDesign:PackIcon Kind="Collections"/>
+                                                <TextBlock Text="Items register" Margin="5 0 0 0"/>
+                                            </StackPanel>
+                                        </MenuItem.Header>
+                                    </MenuItem>
+
+                                    <MenuItem>
+                                        <MenuItem.Header>
+                                            <StackPanel Orientation="Horizontal">
+                                                <materialDesign:PackIcon Kind="Collections"/>
+                                                <TextBlock Text="Other Charges" Margin="5 0 0 0"/>
+                                            </StackPanel>
+                                        </MenuItem.Header>
+                                    </MenuItem>
+
+                                    <MenuItem>
+                                        <MenuItem.Header>
+                                            <StackPanel Orientation="Horizontal">
+                                                <materialDesign:PackIcon Kind="Collections"/>
+                                                <TextBlock Text="Food Category" Margin="5 0 0 0"/>
+                                            </StackPanel>
+                                        </MenuItem.Header>
+                                    </MenuItem>
+
+                                    <MenuItem>
+                                        <MenuItem.Header>
+                                            <StackPanel Orientation="Horizontal">
+                                                <materialDesign:PackIcon Kind="Collections"/>
+                                                <TextBlock Text="Table Register" Margin="5 0 0 0"/>
+                                            </StackPanel>
+                                        </MenuItem.Header>
+                                    </MenuItem>
+
+                                    <MenuItem>
+                                        <MenuItem.Header>
+                                            <StackPanel Orientation="Horizontal">
+                                                <materialDesign:PackIcon Kind="Collections"/>
+                                                <TextBlock Text="Kitechin Register" Margin="5 0 0 0"/>
+                                            </StackPanel>
+                                        </MenuItem.Header>
+                                    </MenuItem>
+                                    <MenuItem>
+                                        <MenuItem.Header>
+                                            <StackPanel Orientation="Horizontal">
+                                                <materialDesign:PackIcon Kind="Collections"/>
+                                                <TextBlock Text="Menu Item register" Margin="5 0 0 0"/>
+                                            </StackPanel>
+                                        </MenuItem.Header>
+                                    </MenuItem>
+
+                                    <MenuItem>
+                                        <MenuItem.Header>
+                                            <StackPanel Orientation="Horizontal">
+                                                <materialDesign:PackIcon Kind="Collections"/>
+                                                <TextBlock Text="Liqour Category" Margin="5 0 0 0"/>
+                                            </StackPanel>
+                                        </MenuItem.Header>
+                                    </MenuItem>
+
+                                    <MenuItem>
+                                        <MenuItem.Header>
+                                            <StackPanel Orientation="Horizontal">
+                                                <materialDesign:PackIcon Kind="Collections"/>
+                                                <TextBlock Text="Liqour Quality" Margin="5 0 0 0"/>
+                                            </StackPanel>
+                                        </MenuItem.Header>
+                                    </MenuItem>
+
+                                    <MenuItem>
+                                        <MenuItem.Header>
+                                            <StackPanel Orientation="Horizontal">
+                                                <materialDesign:PackIcon Kind="Collections"/>
+                                                <TextBlock Text="iquor Master" Margin="5 0 0 0"/>
+                                            </StackPanel>
+                                        </MenuItem.Header>
+                                    </MenuItem>
+
+                                    <MenuItem>
+                                        <MenuItem.Header>
+                                            <StackPanel Orientation="Horizontal">
+                                                <materialDesign:PackIcon Kind="Collections"/>
+                                                <TextBlock Text="Liquor Pricing" Margin="5 0 0 0"/>
+                                            </StackPanel>
+                                        </MenuItem.Header>
+                                    </MenuItem>
+
+                                    <MenuItem>
+                                        <MenuItem.Header>
+                                            <StackPanel Orientation="Horizontal">
+                                                <materialDesign:PackIcon Kind="Collections"/>
+                                                <TextBlock Text="Laundary Register" Margin="5 0 0 0"/>
+                                            </StackPanel>
+                                        </MenuItem.Header>
+                                    </MenuItem>
+
+                                    <MenuItem>
+                                        <MenuItem.Header>
+                                            <StackPanel Orientation="Horizontal">
+                                                <materialDesign:PackIcon Kind="Collections"/>
+                                                <TextBlock Text="Expense Type" Margin="5 0 0 0"/>
+                                            </StackPanel>
+                                        </MenuItem.Header>
+                                    </MenuItem>
+
+                                    <MenuItem>
+                                        <MenuItem.Header>
+                                            <StackPanel Orientation="Horizontal">
+                                                <materialDesign:PackIcon Kind="Collections"/>
+                                                <TextBlock Text="Expense Master" Margin="5 0 0 0"/>
+                                            </StackPanel>
+                                        </MenuItem.Header>
+                                    </MenuItem>
+
+                                    <MenuItem>
+                                        <MenuItem.Header>
+                                            <StackPanel Orientation="Horizontal">
+                                                <materialDesign:PackIcon Kind="Collections"/>
+                                                <TextBlock Text="Tax" Margin="5 0 0 0"/>
+                                            </StackPanel>
+                                        </MenuItem.Header>
+                                    </MenuItem>
+
+                                    <MenuItem>
+                                        <MenuItem.Header>
+                                            <StackPanel Orientation="Horizontal">
+                                                <materialDesign:PackIcon Kind="Collections"/>
+                                                <TextBlock Text="Other Tax" Margin="5 0 0 0"/>
+                                            </StackPanel>
+                                        </MenuItem.Header>
+                                    </MenuItem>
+
+                                    <MenuItem/>
+                                </MenuItem>
+                                <MenuItem>
+                                    <MenuItem.Header>
+                                        <StackPanel Orientation="Horizontal">
+                                            <materialDesign:PackIcon Kind="Collections"/>
+                                            <TextBlock Text="Rooms Entery" Margin="5 0 0 0"/>
+                                        </StackPanel>
+                                    </MenuItem.Header>
+
+                                    <MenuItem Header="Edit"/>
+                                    <MenuItem Header="Edit"/>
+                                    <MenuItem Header="Edit"/>
+                                    <MenuItem Header="Edit"/>
+                                    <MenuItem Header="Edit"/>
+                                    <MenuItem Header="Edit"/>
+                                </MenuItem>
+                                <MenuItem>
+                                    <MenuItem.Header>
+                                        <StackPanel Orientation="Horizontal">
+                                            <materialDesign:PackIcon Kind="Collections"/>
+                                            <TextBlock Text="Food Entery" Margin="5 0 0 0"/>
+                                        </StackPanel>
+                                    </MenuItem.Header>
+
+                                    <MenuItem Header="Edit"/>
+                                    <MenuItem Header="Edit"/>
+                                    <MenuItem Header="Edit"/>
+                                    <MenuItem Header="Edit"/>
+                                    <MenuItem Header="Edit"/>
+                                    <MenuItem Header="Edit"/>
+                                </MenuItem>
+                                <MenuItem>
+                                    <MenuItem.Header>
+                                        <StackPanel Orientation="Horizontal">
+                                            <materialDesign:PackIcon Kind="Collections"/>
+                                            <TextBlock Text="Drink Entery" Margin="5 0 0 0"/>
+                                        </StackPanel>
+                                    </MenuItem.Header>
+
+                                    <MenuItem Header="Edit"/>
+                                    <MenuItem Header="Edit"/>
+                                    <MenuItem Header="Edit"/>
+                                    <MenuItem Header="Edit"/>
+                                    <MenuItem Header="Edit"/>
+                                    <MenuItem Header="Edit"/>
+                                </MenuItem>
+                                <MenuItem>
+                                    <MenuItem.Header>
+                                        <StackPanel Orientation="Horizontal">
+                                            <materialDesign:PackIcon Kind="Collections"/>
+                                            <TextBlock Text="Hall Entery" Margin="5 0 0 0"/>
+                                        </StackPanel>
+                                    </MenuItem.Header>
+
+                                    <MenuItem Header="Edit"/>
+                                    <MenuItem Header="Edit"/>
+                                    <MenuItem Header="Edit"/>
+                                    <MenuItem Header="Edit"/>
+                                    <MenuItem Header="Edit"/>
+                                    <MenuItem Header="Edit"/>
+                                </MenuItem>
+                                <MenuItem>
+                                    <MenuItem.Header>
+                                        <StackPanel Orientation="Horizontal">
+                                            <materialDesign:PackIcon Kind="Collections"/>
+                                            <TextBlock Text="Pool Entery" Margin="5 0 0 0"/>
+                                        </StackPanel>
+                                    </MenuItem.Header>
+
+                                    <MenuItem Header="Edit"/>
+                                    <MenuItem Header="Edit"/>
+                                    <MenuItem Header="Edit"/>
+                                    <MenuItem Header="Edit"/>
+                                    <MenuItem Header="Edit"/>
+                                    <MenuItem Header="Edit"/>
+                                </MenuItem>
+                                <MenuItem>
+                                    <MenuItem.Header>
+                                        <StackPanel Orientation="Horizontal">
+                                            <materialDesign:PackIcon Kind="Collections"/>
+                                            <TextBlock Text="Laundry Entery" Margin="5 0 0 0"/>
+                                        </StackPanel>
+                                    </MenuItem.Header>
+
+                                    <MenuItem Header="Edit"/>
+                                    <MenuItem Header="Edit"/>
+                                    <MenuItem Header="Edit"/>
+                                    <MenuItem Header="Edit"/>
+                                    <MenuItem Header="Edit"/>
+                                    <MenuItem Header="Edit"/>
+                                </MenuItem>
+                                <MenuItem>
+                                    <MenuItem.Header>
+                                        <StackPanel Orientation="Horizontal">
+                                            <materialDesign:PackIcon Kind="Collections"/>
+                                            <TextBlock Text="Tax Entery" Margin="5 0 0 0"/>
+                                        </StackPanel>
+                                    </MenuItem.Header>
+
+                                    <MenuItem Header="Edit"/>
+                                    <MenuItem Header="Edit"/>
+                                    <MenuItem Header="Edit"/>
+                                    <MenuItem Header="Edit"/>
+                                    <MenuItem Header="Edit"/>
+                                    <MenuItem Header="Edit"/>
+                                </MenuItem>
+                                <MenuItem>
+                                    <MenuItem.Header>
+                                        <StackPanel Orientation="Horizontal">
+                                            <materialDesign:PackIcon Kind="Collections"/>
+                                            <TextBlock Text="Employee Entery" Margin="5 0 0 0"/>
+                                        </StackPanel>
+                                    </MenuItem.Header>
+
+                                    <MenuItem Header="Edit"/>
+                                    <MenuItem Header="Edit"/>
+                                    <MenuItem Header="Edit"/>
+                                    <MenuItem Header="Edit"/>
+                                    <MenuItem Header="Edit"/>
+                                    <MenuItem Header="Edit"/>
+                                </MenuItem>
+                            </Menu>
+                        </materialDesign:Card>
+                    </Grid>
+                </materialDesign:Card>
+
+            </Grid>
+            
+
+            <!--<StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
+                <StackPanel>
+                    <TextBlock Text="Lucky Me" FontFamily="Cooper Black" Foreground="#FFC00000"/>
+                    <StackPanel Margin="10">
+                        <TextBlock Text="R$ 28" FontSize="50" FontFamily="Cooper Black" Foreground="#FFC00000"/>
+                    </StackPanel>
+                    <Button/>
+                </StackPanel>
+                <Image Margin="10" Width="200" Height="200" Source="/Hotel_Management_System;component/Assets/ui-771829_1920.jpg"/>
+            </StackPanel>-->
+        </materialDesign:TransitioningContent>
+    </Grid>
+</UserControl>

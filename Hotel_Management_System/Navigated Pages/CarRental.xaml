@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="Hotel_Management_System.Navigated_Pages.CarRental"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Hotel_Management_System.Navigated_Pages"
+             mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="13"
+      TextOptions.TextFormattingMode="Ideal"
+      TextOptions.TextRenderingMode="Auto"
+      Background="{DynamicResource MaterialDesignPaper}"
+      FontFamily="{DynamicResource MaterialDesignFont}"
+             d:DesignHeight="640" d:DesignWidth="1182">
+    <Grid>
+        <materialDesign:TransitioningContent x:Name="TrasitioningContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <materialDesign:Card Grid.Column="0" Margin="4" VerticalAlignment="Stretch">
+                    <Grid Background="#FF4C8BC1">
+
+                    </Grid>
+                </materialDesign:Card>
+                <materialDesign:Card Margin="4" Grid.Column="1" VerticalAlignment="Stretch">
+                    <DataGrid x:Name="dataGrid" Background="#FFDA9E9E"/>
+                </materialDesign:Card>
+            </Grid>
+        </materialDesign:TransitioningContent>
+
+    </Grid>
+</UserControl>

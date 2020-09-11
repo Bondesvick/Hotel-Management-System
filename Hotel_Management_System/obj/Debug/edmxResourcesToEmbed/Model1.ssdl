@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HotelManagementSystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CostumerRegister">
+    <Key>
+      <PropertyRef Name="ClientID" />
+    </Key>
+    <Property Name="ClientID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="TellNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Occupation" Type="nvarchar" MaxLength="30" />
+    <Property Name="Address1" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Picture" Type="image" />
+    <Property Name="DateRegistered" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address2" Type="nvarchar(max)" />
+    <Property Name="RoomType" Type="nvarchar" MaxLength="525" />
+    <Property Name="BookedRoomPrice" Type="money" />
+    <Property Name="NxtOfKinName" Type="nvarchar" MaxLength="40" />
+    <Property Name="NxtOfKinNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="NxtOfKinRelationship" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="LogIn">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="PassWord" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="RoomCategoryType">
+    <Key>
+      <PropertyRef Name="RoomID" />
+    </Key>
+    <Property Name="RoomID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoomType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="Picture" Type="image" />
+    <Property Name="ShortDescription" Type="nvarchar(max)" />
+    <Property Name="Price" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="HotelManagementSystemModelStoreContainer">
+    <EntitySet Name="CostumerRegister" EntityType="Self.CostumerRegister" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LogIn" EntityType="Self.LogIn" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RoomCategoryType" EntityType="Self.RoomCategoryType" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
